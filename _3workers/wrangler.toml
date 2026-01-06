@@ -1,0 +1,60 @@
+# Cloudflare Workers Configuration
+# Documentation: https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "wedding-rsvp-worker"
+main = "_3workers/rsvp-handler.js"
+compatibility_date = "2024-01-01"
+
+# Account ID - Get from Cloudflare Dashboard
+# account_id = "your-account-id-here"
+
+# Workers Site configuration (if serving static files)
+# [site]
+# bucket = "./_2pages"
+
+# Environment Variables (non-sensitive)
+[vars]
+# Replace with your actual Google Sheet ID
+# SHEET_ID = "your-google-sheet-id-here"
+
+# Secrets (set via Wrangler CLI - NEVER commit these to git)
+# Run these commands to set secrets:
+# wrangler secret put GOOGLE_SERVICE_ACCOUNT_KEY
+# Paste the entire JSON contents of your service account key file
+
+# Route configuration for Cloudflare Pages
+# [[routes]]
+# pattern = "yourwedding.com/api/*"
+# zone_name = "yourwedding.com"
+
+# KV Namespace bindings (optional - for caching or rate limiting)
+# [[kv_namespaces]]
+# binding = "RSVP_CACHE"
+# id = "your-kv-namespace-id"
+
+# Durable Objects (optional - for advanced state management)
+# [[durable_objects.bindings]]
+# name = "RSVP_STORE"
+# class_name = "RSVPStore"
+
+# Environment-specific configurations
+[env.production]
+name = "wedding-rsvp-worker-prod"
+# route = "yourwedding.com/api/*"
+
+[env.staging]
+name = "wedding-rsvp-worker-staging"
+
+# Build configuration
+# [build]
+# command = "npm run build"
+# [build.upload]
+# format = "service-worker"
+
+# Usage limits and triggers
+# [triggers]
+# crons = ["0 0 * * *"]  # Daily at midnight (for cleanup tasks)
+
+# Development server
+# [dev]
+# port = 8787

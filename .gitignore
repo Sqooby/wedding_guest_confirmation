@@ -1,0 +1,50 @@
+# Sensitive files - NEVER commit these!
+*service-account*.json
+*.pem
+.env
+.env.local
+
+# Cloudflare
+.wrangler/
+wrangler.toml.local
+
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Backup files
+*.bak
+*.backup
+
+# Local test files
+test-local/
+_local/
