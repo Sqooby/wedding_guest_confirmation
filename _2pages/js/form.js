@@ -6,9 +6,8 @@ class RSVPForm {
         this.messageDiv = document.getElementById('formMessage');
         this.submitBtn = this.form?.querySelector('.submit-btn');
 
-        // Cloudflare Worker endpoint (will be configured later)
-        // Replace with your actual worker URL after deployment
-        this.workerEndpoint = '/api/rsvp'; // Update this after Cloudflare Worker deployment
+        // Cloudflare Worker endpoint
+        this.workerEndpoint = 'https://wedding-rsvp-worker.michal-basznianin.workers.dev';
 
         this.init();
     }
